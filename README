@@ -1,0 +1,135 @@
+📱 PerFin – Personal Finance App
+
+A modern offline-first personal finance Android app built with Jetpack Compose + MVVM + Room + Hilt.
+
+PerFin focuses on:
+
+💸 Expense tracking
+🏦 Multi-account management
+🔒 Privacy (no internet usage)
+🎯 Smooth UX with animations
+🧠 Clean architecture
+🚀 Features
+💰 Core Finance
+Add / Edit / Delete transactions
+Supports:
+Income
+Expense
+Transfer (between accounts)
+Real-time balance updates
+🏦 Accounts
+Default account (auto-created)
+Multiple account support
+Account-wise balance tracking
+Safe delete with transaction reassignment
+🗂 Categories
+Pre-seeded categories
+Icons + colors support
+Type-based filtering (Income / Expense)
+Safe deletion (fallback category)
+📊 Dashboard
+Total balance (real account-based)
+Income / Expense summary
+Recent transactions
+Donut chart visualization
+⚙️ Settings
+Dark mode toggle
+App lock toggle (ready)
+Currency selection
+Onboarding state persistence
+🎬 UX & Animations
+Animated splash screen
+Smooth onboarding flow
+Mascot-based UI
+Modern fintech design
+🧠 Tech Stack
+Kotlin 2.3+
+Jetpack Compose
+MVVM Architecture
+Room Database (Offline-first)
+Hilt (Dependency Injection)
+Coroutines + Flow
+Navigation Compose
+KSP (No kapt)
+🧱 Architecture
+UI → ViewModel → Repository → DAO → Room DB
+Layers:
+com.devshiv.perfin
+├── data
+│   ├── local
+│   │   ├── dao
+│   │   ├── database
+│   │   └── entity
+│   ├── repository
+│
+├── ui
+│   ├── screens
+│   ├── components
+│   ├── navigation
+│   ├── theme
+│
+├── viewmodel
+├── di
+├── utils
+🗄️ Database Design
+Entities:
+TransactionEntity
+AccountEntity
+CategoryEntity
+SettingsEntity
+Key Features:
+Foreign key relationships
+Transfer handling (dual account updates)
+Category linking
+Settings persistence
+🌱 Database Seeding
+
+Default data is inserted using:
+
+Room Database Callback
+Hilt EntryPoint Injection
+Safe insert logic (no duplicates)
+
+Includes:
+
+Default account
+Default categories
+Default settings
+📐 UI Highlights
+Green fintech theme 🌿
+Gold accents ✨
+Rounded cards
+Gradient backgrounds
+Clean typography
+📸 Screens
+Splash
+Onboarding
+Home Dashboard
+Transactions
+Accounts
+Settings
+Add/Edit Transaction
+⚠️ Key Engineering Decisions
+Offline-first → no API dependency
+Account-based balance (not income-expense derived)
+Safe delete logic (accounts & categories)
+Seeder + runtime sync (for updates)
+Flow-based reactive UI
+🔄 Data Flow
+Room DB
+   ↓ Flow
+Repository
+   ↓
+ViewModel
+   ↓
+Compose UI
+🛠 Build & Run
+Android Studio Hedgehog+
+Min SDK: 21+
+Compile SDK: Latest
+📌 Future Improvements
+📊 Advanced analytics (weekly/monthly)
+🔐 Biometric lock
+☁️ Backup & restore
+🧾 Export (CSV/PDF)
+📈 Budget tracking
