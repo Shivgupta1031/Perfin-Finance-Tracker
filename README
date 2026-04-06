@@ -1,135 +1,214 @@
-📱 PerFin – Personal Finance App
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PerFin - Personal Finance App</title>
 
-A modern offline-first personal finance Android app built with Jetpack Compose + MVVM + Room + Hilt.
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+      margin: 0;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
 
-PerFin focuses on:
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
 
-💸 Expense tracking
-🏦 Multi-account management
-🔒 Privacy (no internet usage)
-🎯 Smooth UX with animations
-🧠 Clean architecture
-🚀 Features
-💰 Core Finance
-Add / Edit / Delete transactions
-Supports:
-Income
-Expense
-Transfer (between accounts)
-Real-time balance updates
-🏦 Accounts
-Default account (auto-created)
-Multiple account support
-Account-wise balance tracking
-Safe delete with transaction reassignment
-🗂 Categories
-Pre-seeded categories
-Icons + colors support
-Type-based filtering (Income / Expense)
-Safe deletion (fallback category)
-📊 Dashboard
-Total balance (real account-based)
-Income / Expense summary
-Recent transactions
-Donut chart visualization
-⚙️ Settings
-Dark mode toggle
-App lock toggle (ready)
-Currency selection
-Onboarding state persistence
-🎬 UX & Animations
-Animated splash screen
-Smooth onboarding flow
-Mascot-based UI
-Modern fintech design
-🧠 Tech Stack
-Kotlin 2.3+
-Jetpack Compose
-MVVM Architecture
-Room Database (Offline-first)
-Hilt (Dependency Injection)
-Coroutines + Flow
-Navigation Compose
-KSP (No kapt)
-🧱 Architecture
+    h1, h2, h3 {
+      color: #22c55e;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #022c22, #064e3b);
+      border-radius: 16px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #22c55e;
+      color: black;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: #334155;
+    }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    .code {
+      background: #020617;
+      padding: 16px;
+      border-radius: 10px;
+      overflow-x: auto;
+      color: #38bdf8;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>💸 PerFin</h1>
+    <p>Modern Offline Personal Finance App</p>
+
+    <div>
+      <span class="badge">Jetpack Compose</span>
+      <span class="badge">MVVM</span>
+      <span class="badge">Room DB</span>
+      <span class="badge">Hilt</span>
+      <span class="badge">Offline First</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="section">
+    <h2>🚀 Features</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>💰 Transactions</h3>
+        <p>Add, edit and delete transactions with support for income, expense and transfer.</p>
+      </div>
+
+      <div class="card">
+        <h3>🏦 Accounts</h3>
+        <p>Multiple accounts with real-time balance updates and safe transfer logic.</p>
+      </div>
+
+      <div class="card">
+        <h3>📊 Dashboard</h3>
+        <p>Live balance, income/expense summary and visual insights.</p>
+      </div>
+
+      <div class="card">
+        <h3>🗂 Categories</h3>
+        <p>Predefined categories with icons, colors and filtering.</p>
+      </div>
+
+      <div class="card">
+        <h3>⚙️ Settings</h3>
+        <p>Dark mode, app lock, currency and onboarding control.</p>
+      </div>
+
+      <div class="card">
+        <h3>🔒 Privacy</h3>
+        <p>Fully offline app with no internet usage.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ARCHITECTURE -->
+  <div class="section">
+    <h2>🧠 Architecture</h2>
+
+    <div class="code">
 UI → ViewModel → Repository → DAO → Room DB
-Layers:
-com.devshiv.perfin
-├── data
-│   ├── local
-│   │   ├── dao
-│   │   ├── database
-│   │   └── entity
-│   ├── repository
-│
-├── ui
-│   ├── screens
-│   ├── components
-│   ├── navigation
-│   ├── theme
-│
-├── viewmodel
-├── di
-├── utils
-🗄️ Database Design
-Entities:
-TransactionEntity
-AccountEntity
-CategoryEntity
-SettingsEntity
-Key Features:
-Foreign key relationships
-Transfer handling (dual account updates)
-Category linking
-Settings persistence
-🌱 Database Seeding
+    </div>
 
-Default data is inserted using:
+    <p>Clean MVVM architecture with reactive data flow using Kotlin Flow.</p>
+  </div>
 
-Room Database Callback
-Hilt EntryPoint Injection
-Safe insert logic (no duplicates)
+  <!-- TECH STACK -->
+  <div class="section">
+    <h2>🛠 Tech Stack</h2>
 
-Includes:
+    <div class="grid">
 
-Default account
-Default categories
-Default settings
-📐 UI Highlights
-Green fintech theme 🌿
-Gold accents ✨
-Rounded cards
-Gradient backgrounds
-Clean typography
-📸 Screens
-Splash
-Onboarding
-Home Dashboard
-Transactions
-Accounts
-Settings
-Add/Edit Transaction
-⚠️ Key Engineering Decisions
-Offline-first → no API dependency
-Account-based balance (not income-expense derived)
-Safe delete logic (accounts & categories)
-Seeder + runtime sync (for updates)
-Flow-based reactive UI
-🔄 Data Flow
-Room DB
-   ↓ Flow
-Repository
-   ↓
-ViewModel
-   ↓
-Compose UI
-🛠 Build & Run
-Android Studio Hedgehog+
-Min SDK: 21+
-Compile SDK: Latest
-📌 Future Improvements
-📊 Advanced analytics (weekly/monthly)
-🔐 Biometric lock
-☁️ Backup & restore
-🧾 Export (CSV/PDF)
-📈 Budget tracking
+      <div class="card">Kotlin 2.3+</div>
+      <div class="card">Jetpack Compose</div>
+      <div class="card">Room Database</div>
+      <div class="card">Hilt DI</div>
+      <div class="card">Coroutines + Flow</div>
+      <div class="card">Navigation Compose</div>
+
+    </div>
+  </div>
+
+  <!-- DATABASE -->
+  <div class="section">
+    <h2>🗄 Database Design</h2>
+
+    <div class="grid">
+      <div class="card">TransactionEntity</div>
+      <div class="card">AccountEntity</div>
+      <div class="card">CategoryEntity</div>
+      <div class="card">SettingsEntity</div>
+    </div>
+  </div>
+
+  <!-- DATA FLOW -->
+  <div class="section">
+    <h2>🔄 Data Flow</h2>
+
+    <div class="code">
+Room → Repository → ViewModel → Compose UI
+    </div>
+  </div>
+
+  <!-- FUTURE -->
+  <div class="section">
+    <h2>📌 Future Improvements</h2>
+
+    <div class="grid">
+      <div class="card">📊 Analytics</div>
+      <div class="card">🔐 Biometric Lock</div>
+      <div class="card">☁️ Backup</div>
+      <div class="card">📈 Budget Tracking</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Made with ❤️ by Shiv Kumar Gupta</p>
+  </div>
+
+</div>
+
+</body>
+</html>
